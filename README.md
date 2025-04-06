@@ -46,13 +46,13 @@ Insert some screenshots or GIFs of your UI here for maximum impact
 Pull requests are welcome. Got an idea to improve the tool? Fork the repo and submit a PR!
 
 # 🧠 Built With
- 1. Streamlit[https://streamlit.io/] — UI Framework
+ 1. [Streamlit](https://streamlit.io/) — UI Framework
 
- 2. Nmap — Network Scanner
+ 2. [Nmap](https://nmap.org/) — Network Scanner
 
- 3. Nikto — Web Server Scanner
+ 3. [Nikto]() — Web Server Scanner
 
- 4. SQLMap — SQL Injection Tool
+ 4. [SQLMap](https://sqlmap.org/) — SQL Injection Tool
 
 # 📄 License
 This project is licensed under the MIT License.
