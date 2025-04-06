@@ -1,30 +1,29 @@
-🚀 Automated VAPT Buddy
+# 🚀 Automated VAPT Buddy
 Automated Vulnerability Assessment & Penetration Testing Tool
 Your one-stop solution for running powerful security scans with a single click.
 
-🔐 What is VAPT Buddy?
+# 🔐 What is VAPT Buddy?
 Automated VAPT Buddy is a streamlined, beginner-friendly platform that combines the power of industry-standard tools like Nmap, Nikto, and SQLMap into one easy-to-use web interface.
 
 Whether you're a cybersecurity enthusiast or a seasoned pentester, this tool lets you launch scans and view aggregated results without touching the terminal.
 
-🎯 Key Features
-✅ One-Click Scanning: Run Nmap, SQLMap, and Nikto with a single click.
+# 🎯 Key Features
+## ✅ One-Click Scanning: Run Nmap, SQLMap, and Nikto with a single click.
 
-🧠 User-Friendly Interface: Built using Streamlit for seamless UX.
+## 🧠 User-Friendly Interface: Built using Streamlit for seamless UX.
 
-⚙️ Customizable Scans: Choose the tools you want to run — no clutter, no noise.
+## ⚙️ Customizable Scans: Choose the tools you want to run — no clutter, no noise.
 
-📊 Consolidated Output: View structured and readable results directly in your browser.
+## 📊 Consolidated Output: View structured and readable results directly in your browser.
 
-🛠️ Installation
+# 🛠️ Installation
+
 Clone this repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/VAPT_Buddy.git
-cd VAPT_Buddy
-Install required dependencies:
+1. Navigate to:
+   ```bash
+   git clone https://github.com/yourusername/VAPT_Buddy.git
+   cd VAPT_Buddy
+2. Install required dependencies:
 
 bash
 Copy
