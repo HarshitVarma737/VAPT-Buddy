@@ -12,5 +12,9 @@ This is an automated Vulnerability Assessment and Penetration Testing (VAPT) too
    ```bash
    pip install -r requirements.txt
 
-##Run Cosw
-1. streamlit run app.py
+## Running the app
+1. Navigate to /VAPT_PROJECT/frontend/ 
+2. streamlit run app.py
+3. Use the localhost to run it.
+
+Don't worry soon to be hosted.
