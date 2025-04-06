@@ -55,4 +55,4 @@ Pull requests are welcome. Got an idea to improve the tool? Fork the repo and su
  4. [SQLMap](https://sqlmap.org/) — SQL Injection Tool
 
 # 📄 License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
