@@ -8,13 +8,13 @@ Automated VAPT Buddy is a streamlined, beginner-friendly platform that combines 
 Whether you're a cybersecurity enthusiast or a seasoned pentester, this tool lets you launch scans and view aggregated results without touching the terminal.
 
 # 🎯 Key Features
-## ✅ One-Click Scanning: Run Nmap, SQLMap, and Nikto with a single click.
+ ✅ One-Click Scanning: Run Nmap, SQLMap, and Nikto with a single click.
 
-## 🧠 User-Friendly Interface: Built using Streamlit for seamless UX.
+ 🧠 User-Friendly Interface: Built using Streamlit for seamless UX.
 
-## ⚙️ Customizable Scans: Choose the tools you want to run — no clutter, no noise.
+ ⚙️ Customizable Scans: Choose the tools you want to run — no clutter, no noise.
 
-## 📊 Consolidated Output: View structured and readable results directly in your browser.
+ 📊 Consolidated Output: View structured and readable results directly in your browser.
 
 # 🛠️ Installation
 
