@@ -3,6 +3,7 @@ import time
 import sys
 import os
 import base64
+from streamlit_chat import message
 
 # ✅ Ensure `set_page_config` is the first Streamlit command
 st.set_page_config(page_title="Automated VAPT Tool", page_icon="🛡️", layout="wide")
@@ -11,21 +12,14 @@ st.set_page_config(page_title="Automated VAPT Tool", page_icon="🛡️", layout
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "backend")))
 
 try:
-    from vapt_tool import aggregate_results
+    from vapt_tool import aggregate_results, query_huggingface
 except ModuleNotFoundError:
     st.error("❌ Backend module 'vapt_tool' not found. Ensure 'backend' directory contains '__init__.py'.")
     st.stop()
 
 # Define scan types
 scan_types = {
-    "nmap": ["Service Detection", "Aggressive Scan", "Ping Scan", "UDP Scan", "OS Detection"],
-    "sqlmap": ["Basic Scan", "DB Enumeration", "Table Enumeration", "Column Enumeration", "Data Dump"],
-    "nikto": ["Basic Scan", "Tuning Scan", "SSL Scan", "Headers Scan", "Cookies Scan"],
-    "gobuster": ["Directory Scan", "DNS Subdomain Scan", "VHost Scan", "File Scan", "Recursive Scan"],
-    "whatweb": ["Standard Scan", "Aggressive Scan", "Plugin Detection", "Colorized Output", "Verbose Mode"],
-    "wpscan": ["Basic Scan", "Theme Detection", "Plugin Detection", "User Enumeration", "Vulnerabilities Scan"],
-    "sublist3r": ["Basic Subdomain Enumeration"],
-    "metasploit": ["HTTP Version Scan", "FTP Version Scan", "SMB Scan", "SSH Scan", "SNMP Scan"]
+    "nmap": ["Service Detection", "Aggressive Scan", "Ping Scan", "UDP Scan", "OS Detection"]
 }
 
 # ✅ Use correct paths for assets
@@ -119,8 +113,26 @@ if st.session_state.scan_running and target and selected_tools:
             st.success("Scan Completed Successfully! ✅")
             for tool, output in results.items():
                 st.markdown(f"### 🔍 Results from **{tool}**:")
-                st.code(output, language="bash")
+                st.code(output['output'], language="bash")
             st.session_state.scan_running = False
+
+st.markdown("---")
+
+# ✅ AI Chat Assistant
+st.markdown("### 🤖 Ask VAPT Buddy (AI Assistant)")
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+
+user_prompt = st.text_input("Enter your query:", key="ai_input")
+if st.button("Ask AI") and user_prompt:
+    with st.spinner("Thinking..."):
+        ai_response = query_huggingface(user_prompt)
+        st.session_state.chat_history.append((user_prompt, ai_response))
+
+# Display chat history
+for i, (q, a) in enumerate(st.session_state.chat_history):
+    message(q, is_user=True, key=f"user_{i}")
+    message(a, key=f"ai_{i}")
 
 # ✅ Footer
 st.markdown(
